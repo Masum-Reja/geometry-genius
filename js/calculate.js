@@ -114,7 +114,7 @@ document.getElementById("rhombus").addEventListener("mouseenter", function () {
 document.getElementById("btn-pentagon").addEventListener("click", function () {
   const x = document.getElementById("pentagon-p").value;
   const y = document.getElementById("pentagon-b").value;
-  if (x === "" || x <= 0 || y === "" ||  y <= 0) {
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
     return alert("Insert a valid number except negative");
   } else {
     const pentagon = getValue("pentagon-p", "pentagon-b");
@@ -131,7 +131,7 @@ document.getElementById("pentagon").addEventListener("mouseenter", function () {
 document.getElementById("btn-ellipse").addEventListener("click", function () {
   const x = document.getElementById("ellipse-a").value;
   const y = document.getElementById("ellipse-b").value;
-  if (x === "" || x <= 0 || y === "" || y <= 0 || typeof(y.value)=='object') {
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
     return alert("Insert a valid number except negative");
   } else {
     const ellipse = getValue("ellipse-a", "ellipse-b");
@@ -143,7 +143,6 @@ document.getElementById("btn-ellipse").addEventListener("click", function () {
 document.getElementById("ellipse").addEventListener("mouseenter", function () {
   getColor(ellipse);
 });
-
 
 // Blog Button Show the Question Answer
 
