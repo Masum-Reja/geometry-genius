@@ -13,19 +13,29 @@ function getValue(inputId1, inputId2) {
 
 let count = 0;
 function calculationArea(name, area) {
-  count += 1;
-  const tr = document.createElement("tr");
-  const parent = document.getElementById("area-container");
-  tr.innerHTML = `
+  if (area == "NaN") {
+    return alert("Insert only number please");
+  } else {
+    count += 1;
+    const tr = document.createElement("tr");
+    const parent = document.getElementById("area-container");
+    tr.innerHTML = `
     <td >${count}</td>
     <td >${name}</td>
-    <td >${area}cm&#178</td>
+    <td >${area}cm&#178 </td>
     <td>
     <button class='btn btn-primary'>Covert to m&#178;</button>
     </td>`;
 
-  parent.appendChild(tr);
+    parent.appendChild(tr);
+  }
 }
+
+// Blog Button Show the Question Answer
+
+document.getElementById("btn-blog").addEventListener("click", function () {
+  window.location = "question.html";
+});
 
 //  Random Color Function
 
@@ -44,9 +54,9 @@ document.getElementById("btn-triangle").addEventListener("click", function () {
   if (x === "" || x <= 0 || y === "" || y <= 0) {
     return alert("Insert a valid number except negative");
   } else {
-    const triangle = getValue("triangle-b", "triangle-h");
+    const triangle = getValue("triangle-b","triangle-h");
     const triangleArea = 0.5 * triangle.toFixed(2);
-    calculationArea("Triangle", triangleArea);
+    calculationArea("Triangle",triangleArea);
   }
 });
 document.getElementById("triangle").addEventListener("mouseenter", function () {
@@ -60,7 +70,7 @@ document.getElementById("btn-rectangle").addEventListener("click", function () {
   if (x === "" || x <= 0 || y === "" || y <= 0) {
     return alert("Insert a valid number except negative");
   } else {
-    const rectangle = getValue("rectangle-w", "rectangle-I");
+    const rectangle = getValue("rectangle-w","rectangle-I");
     const rectangleArea = rectangle.toFixed(2);
     calculationArea("Rectangle", rectangleArea);
   }
@@ -75,9 +85,9 @@ document
 //Parallelogram:
 document
   .getElementById("btn-parallelogram")
-  .addEventListener("click", function () {
-    const x = document.getElementById("rectangle-w").value;
-    const y = document.getElementById("rectangle-I").value;
+  .addEventListener("click",function () {
+    const x = document.getElementById("parallelogram-b").value;
+    const y = document.getElementById("parallelogram-h").value;
     if (x === "" || x <= 0 || y === "" || y <= 0) {
       return alert("Insert a valid number except negative");
     } else {
@@ -142,10 +152,4 @@ document.getElementById("btn-ellipse").addEventListener("click", function () {
 
 document.getElementById("ellipse").addEventListener("mouseenter", function () {
   getColor(ellipse);
-});
-
-// Blog Button Show the Question Answer
-
-document.getElementById("btn-blog").addEventListener("click", function () {
-  window.location = "question.html";
 });
