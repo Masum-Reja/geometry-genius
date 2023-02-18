@@ -27,7 +27,7 @@ function calculationArea(name, area) {
      parent.appendChild(tr);
 }
   
-//  Color Function
+//  Random Color Function
 
 function getColor(cardId) {
   var x = Math.floor(Math.random() * 256);
@@ -37,12 +37,20 @@ function getColor(cardId) {
   cardId.style.backgroundColor = bgColor;
 }
   
-
 //Triangle:
 document.getElementById("btn-triangle").addEventListener("click", function () {
-  const triangle = getValue("triangle-b", "triangle-h");
-  const triangleArea = 0.5 * triangle.toFixed(2);
-  calculationArea("Triangle", triangleArea);
+  const x = document.getElementById("triangle-b").value;
+  const y = document.getElementById("triangle-h").value;
+  if (x === "" || x <= 0 || y === "" || y <= 0)
+  {
+    return alert("Insert a valid number except negative");
+  }
+  else {
+    const triangle = getValue("triangle-b", "triangle-h");
+    const triangleArea = 0.5 * triangle.toFixed(2);
+    calculationArea("Triangle", triangleArea);
+  }
+  
 });
  document
    .getElementById("triangle")
@@ -52,9 +60,16 @@ document.getElementById("btn-triangle").addEventListener("click", function () {
 
 //Rectangle:
 document.getElementById("btn-rectangle").addEventListener("click", function () {
-  const rectangle = getValue("rectangle-w", "rectangle-I");
-  const rectangleArea = rectangle.toFixed(2);
-  calculationArea("Rectangle", rectangleArea);
+  const x = document.getElementById("rectangle-w").value;
+  const y = document.getElementById("rectangle-I").value;
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
+    return alert("Insert a valid number except negative");
+  }
+  else {
+    const rectangle = getValue("rectangle-w", "rectangle-I");
+    const rectangleArea = rectangle.toFixed(2);
+    calculationArea("Rectangle", rectangleArea);
+  }
 });
 
    document
@@ -67,9 +82,16 @@ document.getElementById("btn-rectangle").addEventListener("click", function () {
 document
   .getElementById("btn-parallelogram")
   .addEventListener("click", function () {
-    const parallelogram = getValue("parallelogram-b", "parallelogram-h");
-    const parallelogramArea = parallelogram.toFixed(2);
-    calculationArea("Parallelogram", parallelogramArea);
+    const x = document.getElementById("rectangle-w").value;
+  const y = document.getElementById("rectangle-I").value;
+    if (x === "" || x <= 0 || y === "" || y <= 0) {
+      return alert("Insert a valid number except negative");
+    }
+    else {
+      const parallelogram = getValue("parallelogram-b", "parallelogram-h");
+      const parallelogramArea = parallelogram.toFixed(2);
+      calculationArea("Parallelogram", parallelogramArea);
+    }
   });
   
     document
@@ -80,9 +102,16 @@ document
 
 //Rhombus:
 document.getElementById("btn-rhombus").addEventListener("click", function () {
-  const rhombus = getValue("rhombus-d1", "rhombus-d2");
-  const rhombusArea = 0.5 * rhombus.toFixed(2);
-  calculationArea("Rhombus", rhombusArea);
+  const x = document.getElementById("rhombus-d1").value;
+  const y = document.getElementById("rhombus-d2").value;
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
+    return alert("Insert a valid number except negative");
+  }
+  else {
+    const rhombus = getValue("rhombus-d1", "rhombus-d2");
+    const rhombusArea = 0.5 * rhombus.toFixed(2);
+    calculationArea("Rhombus", rhombusArea);
+  }
 });
 
   document
@@ -93,12 +122,19 @@ document.getElementById("btn-rhombus").addEventListener("click", function () {
 
 //Pentagon:
 document.getElementById("btn-pentagon").addEventListener("click", function () {
-  const pentagon = getValue("pentagon-p", "pentagon-b");
-  const pentagonArea = (0.5 * pentagon).toFixed(2);
-  calculationArea("Pentagon", pentagonArea);  
+  const x = document.getElementById("pentagon-p").value;
+  const y = document.getElementById("pentagon-b").value;
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
+    return alert("Insert a valid number except negative");
+  }
+  else {
+    const pentagon = getValue("pentagon-p", "pentagon-b");
+    const pentagonArea = (0.5 * pentagon).toFixed(2);
+    calculationArea("Pentagon", pentagonArea);
+  }
+
 });
 
-  // Random Color
   document
     .getElementById("pentagon")
     .addEventListener("mouseenter", function () {
@@ -107,9 +143,16 @@ document.getElementById("btn-pentagon").addEventListener("click", function () {
 
 //Ellipse:
 document.getElementById("btn-ellipse").addEventListener("click", function () {
-  const ellipse = getValue("ellipse-a", "ellipse-b");
-  const ellipseArea = (3.14 * ellipse).toFixed(2);
-  calculationArea("Ellipse", ellipseArea);
+  const x = document.getElementById("ellipse-a").value;
+  const y = document.getElementById("ellipse-b").value;
+  if (x === "" || x <= 0 || y === "" || y <= 0) {
+    return alert("Insert a valid number except negative");
+  }
+  else {
+    const ellipse = getValue("ellipse-a", "ellipse-b");
+    const ellipseArea = (3.14 * ellipse).toFixed(2);
+    calculationArea("Ellipse", ellipseArea);
+  }
 });
 
   document
