@@ -8,3 +8,20 @@ function getValue(inputId1, inputId2) {
   return area;
       
 }
+let count = 0;
+function calculationArea(name, area) {
+  count += 1;
+  const tr = document.createElement("tr");
+
+  const parent = document.getElementById("area-container");
+  tr.innerHTML = `
+    <td class="">${count}</td>
+    <td class="">${name}</td>
+    <td class="">${area}cm&#178</td>
+    <td>
+    <button class='btn btn-primary'>Covert to m&#178;</button>
+    </td>`;
+  parent.appendChild(tr);
+  console.log(tr);
+}
+
